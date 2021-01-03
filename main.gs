@@ -21,12 +21,17 @@ const postGoogleChats = (text, webhookURL) => {
   const payload = JSON.stringify({
     'text' : text,
   });
-  
-  const response = UrlFetchApp.fetch(webhookURL, {
-    'method' : 'POST',
-    'contentType' : 'application/json; charset=utf-8',
-    'payload' : payload
-  });
+    
+  try {
+    UrlFetchApp.fetch(webhookURL, {
+      'method' : 'POST',
+      'contentType' : 'application/json; charset=utf-8',
+      'payload' : payload
+    });
+  } catch(e) {
+    console.error(e);
+    throw new Error(`WebhookURLに誤りがないか確認してください。現在：${webhookURL}`);
+  }
 };
 
 /**
