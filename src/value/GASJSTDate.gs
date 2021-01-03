@@ -1,7 +1,7 @@
 /**
  * @class GoogleAppsScript上でDate(日本時間)を管理する
  */
-class GASJapanDate {
+class GASJSTDate {
   constructor() {
     console.log(`ロケール設定してもできないらしいので愚直に足し算する`);
     console.log(`そのため表示は「Eastern Standard Time」になってるが、日本時間になってるので注意`);

@@ -6,7 +6,7 @@
  */
 const exampleService = () => {
   // 0. 平日判定をする
-  const today = new GASJapanDate();
+  const today = new GASJSTDate();
   if(today.isHoliday() && today.isNationalHoliday()) {
     console.info(`土日祝のため投稿をスキップします`);
     return;
