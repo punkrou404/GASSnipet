@@ -33,3 +33,19 @@ const copyGoogleDocs = (title, srcDocsId, outputDriveId) => {
   var outputFolder = DriveApp.getFolderById(outputDriveId);
   templateFile.makeCopy(title, outputFolder);
 }
+
+
+
+
+/**
+ * @func 既存GoogleDocumentsファイルの本文を取得する　
+ * @param {string} fileName - 対象のファイル名
+ * @return {string} text - ファイル本文
+ */
+const getGoogleDocumentsContent = (fileName) => {
+  console.log(`getGoogleDocumentsContent start`);
+
+  const fileId = DriveApp.getFilesByName(fileName).next().getId();
+  const file = DocumentApp.openById(fileId);
+  return file.getBody().getText();
+};
