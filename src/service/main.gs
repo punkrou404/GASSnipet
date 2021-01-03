@@ -28,14 +28,13 @@ const postGoogleChats = (text, webhookURL) => {
  * @param {string} srcDocsId - コピー元ファイルID
  * @param {string} outputDriveId - コピー先ドライブID
  */
-const copyGoogleDocs = (title, srcDocsId, outputDriveId) => {
+const copyGoogleDocumentsFile = (title, srcDocsId, outputDriveId) => {
+  console.log(`copyGoogleDocumentsFile start`);
+
   const templateFile = DriveApp.getFileById(srcDocsId);
   var outputFolder = DriveApp.getFolderById(outputDriveId);
   templateFile.makeCopy(title, outputFolder);
 }
-
-
-
 
 /**
  * @func 既存GoogleDocumentsファイルの本文を取得する　

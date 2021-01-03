@@ -13,7 +13,7 @@ const exampleService1 = () => {
 
   // 1. 議事録の準備をする
   const title = `${today.formatted()}-〇〇発表会のテーマ決め`;
-  copyGoogleDocs(title, TEMPLATE_DOCS_ID, MEETING_NOTE_DRIVE_ID);
+  copyGoogleDocumentsFile(title, TEMPLATE_DOCS_ID, MEETING_NOTE_DRIVE_ID);
 
   // 2. 会議の周知をする
   const text = `<users/all> 今日は「〇〇発表会のテーマ決め」です！`;
