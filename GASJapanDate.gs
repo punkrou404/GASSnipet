@@ -11,8 +11,8 @@ class GASJapanDate {
     this.value = new Date(Date.now() + diffJST);
     console.info(`今日の日付: ${this.value}`);
 
-    console.log(`祝日カレンダーID`);
     this.HolidaysCalendarId = 'ja.japanese#holiday@group.v.calendar.google.com';
+    console.log(`祝日カレンダーID：${this.HolidaysCalendarId}`);
   }
 
   /**
@@ -45,7 +45,7 @@ class GASJapanDate {
     const jpHolidays = CalendarApp.getCalendarById(this.HolidaysCalendarId);
 
     if (null === jpHolidays) {
-      throw new Error(`管理者のカレンダーに${jpHolidaysId}(日本の祝日)を追加する必要があります。`);
+      throw new Error(`管理者のカレンダーに${this.HolidaysCalendarId}(日本の祝日)を追加する必要があります。`);
     }
 
     const startDate = new Date(this.value.getFullYear(), this.value.getMonth(), this.value.getDate());
