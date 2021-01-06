@@ -1,0 +1,19 @@
+{
+  "name": "gasutility",
+  "version": "1.0.0",
+  "description": "- GoogleAppsScriptで使ったコードの個人的なスニペット集",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/punkrou404/GASUtility.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/punkrou404/GASUtility/issues"
+  },
+  "homepage": "https://github.com/punkrou404/GASUtility#readme"
+}
