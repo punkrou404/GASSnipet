@@ -1,17 +1,4 @@
 /**
- * @func 既存GoogleDocumentsファイルの本文を取得する　
- * @param {string} fileName - 対象のファイル名
- * @return {string} text - ファイル本文
- */
-const getContent = (fileName) => {
-    console.log(`DocumentAppW#getContent start`);
-
-    const fileId = DriveApp.getFilesByName(fileName).next().getId();
-    const file = DocumentApp.openById(fileId);
-    return file.getBody().getText();
-};
-
-/**
  * @func 段落内の文章を取得する
  * @param {string} title - 段落名
  * @param {string} fileId - ファイルID
@@ -55,4 +42,4 @@ const getContent = (fileId) => {
     console.log(`DocumentAppW#getContent start`);
 
     return DocumentApp.openById(fileId).getBody().getText();
-}
+};
