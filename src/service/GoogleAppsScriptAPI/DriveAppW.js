@@ -21,3 +21,23 @@ const getFileId = (fileName) => {
 
     return DriveApp.getFilesByName(fileName).next().getId();
 };
+
+const getLatestFileId = (folderId) => {
+  const files = DriveApp.getFolderById(folderId).getFiles();
+  const fileDatas = [];
+
+  while (files.hasNext()) {
+    var file = files.next();
+    fileDatas.push({
+      id : file.getId(), 
+      date: file.getDateCreated()
+    });
+  }
+  fileDatas.sort((a,b) => {
+    if(a.date > b.date) return -1;
+    if(a.date < b.date) return 1;
+    return 0;
+  })
+
+  return fileDatas[0].id;
+};
