@@ -26,8 +26,6 @@ class GASJSTDate {
    * @return {boolean} - 土日ならtrue,そうでないならばfalse
    */
   isHoliday() {
-    console.log(`isHoliday start`);
-
     const restDays = [`REST`,`mon`,`tue`,`wed`,`thu`,`fri`,`REST`];
     if ( restDays [this.value.getDay()] == `REST` ) {
       return true;
@@ -40,8 +38,6 @@ class GASJSTDate {
    * @return {boolean} - 祝日ならtrue,そうでないならばfalse
    */
   isNationalHoliday() {
-    console.log(`isNationalHoliday start`);
-
     const jpHolidays = CalendarApp.getCalendarById(this.HolidaysCalendarId);
 
     if (null === jpHolidays) {

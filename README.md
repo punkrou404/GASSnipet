@@ -1,3 +1,2 @@
 # GASUtility
-- GoogleAppsScriptの個人的なスニペット集
-- `example.gs`に利用例を記載
+- GoogleAppsScriptで使ったコードの個人的なスニペット集
