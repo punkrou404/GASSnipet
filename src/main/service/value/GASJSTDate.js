@@ -72,5 +72,5 @@ class GASJSTDate {
     };
 
     return false;
-  };
+  }
 }

@@ -9,7 +9,19 @@
 ```
 npm run build
 ```
-- `./dist/*.gs`に各スニペットが使える状態で吐き出されてる
-- `./dist/*.gs`毎にライブラリとして追加しておけば、関数として他のスクリプトに利用可能
+- `./dist/main.gs`に各スニペットが使える状態で吐き出されてる
 - ライブラリの追加方法は`gas ライブラリ`とかでググればおｋ
 - ↑だけ使えば利用可能、依存関係や事前準備は不要
+
+# How-to
+
+- `create*()`関数で欲しいモジュールを呼び出して利用
+
+```
+// `GASSnipet`という名前でライブラリ作成し事前設定する
+const driveAppW = GASSnipet.createDriveAppW();
+const fileId = driveAppW.getFileId(`〇〇PRJ ▲▲機能 納品報告書`);
+
+const documentAppW = GASSnipet.createDocumentAppW();
+console.log(documentAppW.getContent(fileId));
+```

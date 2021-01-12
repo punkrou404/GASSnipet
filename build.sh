@@ -5,17 +5,16 @@ if [ -d ./dist ]; then
 fi
 
 mkdir ./dist
-
-for filename in `find ./src/main -name "*.js"`
-do
-TARGET=./dist/`basename $filename ".js"`.gs
+TARGET=./dist/main.gs
 
 # 元ネタを出力しておく
 echo '// このライブラリのソースコードはこちら' >> $TARGET
 echo '// https://github.com/punkrou404/GASUtility' >> $TARGET
 
+for filename in `find ./src/main -name "*.js"`
+do
 # スニペットを全て吐き出す
 echo >> $TARGET
-echo >> $TARGET
 cat $filename >> $TARGET
+echo >> $TARGET
 done
