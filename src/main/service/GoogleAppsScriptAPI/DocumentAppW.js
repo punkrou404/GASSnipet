@@ -3,9 +3,7 @@
  * @param {string} title - 段落名
  * @param {string} fileId - ファイルID
  */
-const getParagraphContent = (title, fileId) => {
-    console.log(`DocumentAppW#getParagraphContent start`);
-
+function getParagraphContent(title, fileId) {
     let active = false;
     let content = '';
 
@@ -38,8 +36,6 @@ const getParagraphContent = (title, fileId) => {
  * @func ファイル内の文章を全て取得する
  * @param {string} fileId - ファイルID 
  */
-const getContent = (fileId) => {
-    console.log(`DocumentAppW#getContent start`);
-
+function getContent(fileId) {
     return DocumentApp.openById(fileId).getBody().getText();
 };

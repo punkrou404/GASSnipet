@@ -3,9 +3,7 @@
  * @param {string} text - 投稿内容
  * @param {string} webhookURL - 投稿先のGoogleChatsの部屋のwebhookURL
  */
-const post = (text, webhookURL) => {
-  console.log(`post start`);
-
+function post(text, webhookURL) {
   const payload = JSON.stringify({
     'text' : text,
   });

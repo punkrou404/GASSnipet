@@ -4,11 +4,9 @@
  * @param {string} srcDocsId - コピー元ファイルID
  * @param {string} outputDriveId - コピー先ドライブID
  */
-const copyFile = (title, srcDocsId, outputDriveId) => {
-  console.log(`DriveAppW#copyFile start`);
-
+function copyFile(title, srcDocsId, outputDriveId) {
   const templateFile = DriveApp.getFileById(srcDocsId);
-  var outputFolder = DriveApp.getFolderById(outputDriveId);
+  const outputFolder = DriveApp.getFolderById(outputDriveId);
   templateFile.makeCopy(title, outputFolder);
 }
 
@@ -16,9 +14,7 @@ const copyFile = (title, srcDocsId, outputDriveId) => {
 * @func ファイルIDを取得する
 * @param {string} fileName - 対象のファイル名
 */
-const getFileId = (fileName) => {
-  console.log(`DriveAppW#getFileId start`);
-
+function getFileId(fileName) {
   return DriveApp.getFilesByName(fileName).next().getId();
 };
 
@@ -26,10 +22,11 @@ const getFileId = (fileName) => {
  * @func フォルダ内の最新のファイルIDを取得する
  * @param {string} folderId - フォルダID
  */
-const getLatestFileId = (folderId) => {
+function getLatestFileId(folderId) {
   const files = DriveApp.getFolderById(folderId).getFiles();
   const fileDatas = [];
 
+  // 全ファイルIDを取得して
   while (files.hasNext()) {
     var file = files.next();
     fileDatas.push({
@@ -37,6 +34,9 @@ const getLatestFileId = (folderId) => {
       date: file.getDateCreated()
     });
   }
+
+  // 日付で並べなおし最新のみ出力
+  // sortや日付でのselectはgoogleで実装されていない
   fileDatas.sort((a,b) => {
     if(a.date > b.date) return -1;
     if(a.date < b.date) return 1;
