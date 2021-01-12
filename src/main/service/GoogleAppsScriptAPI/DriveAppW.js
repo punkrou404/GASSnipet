@@ -28,7 +28,7 @@ function getLatestFileId(folderId) {
 
   // 全ファイルIDを取得して
   while (files.hasNext()) {
-    var file = files.next();
+    const file = files.next();
     fileDatas.push({
       id : file.getId(), 
       date: file.getDateCreated()
@@ -44,4 +44,32 @@ function getLatestFileId(folderId) {
   })
 
   return fileDatas[0].id;
+};
+
+/**
+ * @func フォルダ内の最新のフォルダ名を取得する
+ * @param {string} folderId - フォルダID
+ */
+function getLatestFolderName(folderId) {
+  const folders = DriveApp.getFolderById(folderId).getFolders();
+  const folderDatas = [];
+
+  // 全フォルダIDを取得して
+  while (folders.hasNext()) {
+    const folder = folders.next();
+    folderDatas.push({
+      name : folder.getName(), 
+      date: folder.getDateCreated()
+    });
+  }
+
+  // 日付で並べなおし最新のみ出力
+  // sortや日付でのselectはgoogleで実装されていない
+  folderDatas.sort((a,b) => {
+    if(a.date > b.date) return -1;
+    if(a.date < b.date) return 1;
+    return 0;
+  })
+
+  return folderDatas[0].name;
 };

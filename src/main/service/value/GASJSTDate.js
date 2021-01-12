@@ -1,3 +1,7 @@
+function createGASJSTDate() {
+  return new GASJSTDate();
+};
+
 /**
  * @class GoogleAppsScript上でDate(日本時間)を管理する
  * @description
