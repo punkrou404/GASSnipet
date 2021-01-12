@@ -1,4 +1,4 @@
-# GASUtility
+# GASSnipet
 - GoogleAppsScriptで使ったコードの個人的なスニペット集
 - ディレクトリ構成はgoogleのAPIのジャンルで分けてる
     - `〇〇W.js`の"W"はWrapperの略、GASのAPIのラッパーという意味
