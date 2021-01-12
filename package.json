@@ -4,7 +4,7 @@
   "description": "- GoogleAppsScriptで使ったコードの個人的なスニペット集",
   "main": "index.js",
   "scripts": {
-    "build": "echo \"Error: no test specified\" && exit 1"
+    "build": "sh build.sh"
   },
   "repository": {
     "type": "git",
