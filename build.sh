@@ -8,7 +8,14 @@ mkdir ./dist
 
 for filename in `find ./src/main -name "*.js"`
 do
-cat $filename >> ./dist/main.gs
-echo >> ./dist/main.gs
-echo >> ./dist/main.gs
+TARGET=./dist/`basename $filename ".js"`.gs
+
+# 元ネタを出力しておく
+echo '// このライブラリのソースコードはこちら' >> $TARGET
+echo '// https://github.com/punkrou404/GASUtility' >> $TARGET
+
+# スニペットを全て吐き出す
+echo >> $TARGET
+echo >> $TARGET
+cat $filename >> $TARGET
 done
