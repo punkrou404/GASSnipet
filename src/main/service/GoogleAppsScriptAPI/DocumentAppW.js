@@ -44,4 +44,12 @@ class DocumentAppW {
   getContent(fileId) {
     return DocumentApp.openById(fileId).getBody().getText();
   }
+  
+  /**
+  * @func ファイルタイトルを取得する
+  * @param {string} fileId - ファイルID 
+  */
+  getTitle(fileId) {
+    return DocumentApp.openById(fileId).getName();
+  }
 }
