@@ -30,7 +30,7 @@ class DocumentAppW {
 
       // お目当ての段落内のテキストは保持しておく
       if(active) {
-        content = e.getText();
+        content += `${e.getText()}\n`;
       }
     });
 
